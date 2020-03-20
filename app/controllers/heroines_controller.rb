@@ -16,7 +16,7 @@ class HeroinesController < ApplicationController
     @heroine.save
 
     if @heroine.valid?
-      redirect_to heroines_path
+      redirect_to @heroine
     else
       flash[:message] = "Create failed"
       redirect_to new_heroine_path

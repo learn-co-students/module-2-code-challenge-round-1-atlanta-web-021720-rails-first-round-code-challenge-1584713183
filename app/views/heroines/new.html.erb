@@ -4,6 +4,6 @@
     <%= f.text_field :name %>
     <%= f.text_field :super_name %>
     <%= f.collection_select :power_ids, Power.all, :id, :name%>
-    <%=f.submit "Submit"%>
+    <%= f.submit "Submit"%>
 <% end %>
   

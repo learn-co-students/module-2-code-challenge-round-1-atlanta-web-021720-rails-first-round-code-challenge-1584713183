@@ -2,9 +2,11 @@
 
 <h3> Name : <%=@heroine.name%> </h3>
 <h3> Super Name : <%=@heroine.super_name%> </h3>
-
-<%=%>
-<%=%>
-<%=%>
-<%=%>
-<%=%>
+    <ul>
+    <% @heroine.powers.each do |power| %>
+        <li>
+        Power Name : <%= power.name %>
+        power Descaription : <%= power.description  %>
+        </li>
+    <% end %>
+    </ul>
