@@ -6,4 +6,28 @@ class HeroinesController < ApplicationController
   def show
     @heroine = Heroine.find(params[:id])
   end
+
+  def new
+    @heroine = Heroine.new
+  end
+
+  def create
+    @heroine = Heroine.new(hero_params)
+    @heroine.save
+
+    if @heroine.valid?
+      redirect_to heroines_path
+    else
+      flash[:message] = "Create failed"
+      redirect_to new_heroine_path
+    end
+  end
+
+  private 
+
+  def hero_params
+  # params.require().permit
+  params.require(:heroine).permit(:name,:super_name)
+  end
+
 end
