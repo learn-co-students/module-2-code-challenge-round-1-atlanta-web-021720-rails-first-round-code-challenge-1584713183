@@ -1,3 +1,5 @@
 class Power < ApplicationRecord
-    belongs_to :heroine
+    has_many :heroine_powers
+    has_many :heroines, through: :heroine_powers
+    #has_many :heroines, :through => :heroine_powers
 end
