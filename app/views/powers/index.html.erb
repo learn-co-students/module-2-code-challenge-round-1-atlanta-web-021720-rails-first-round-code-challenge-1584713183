@@ -3,7 +3,8 @@
 <ul>
   <% @powers.each do |power| %>
     <li>
-      <%= power.name %>
+      Name : <%= power.name %>
+      Name : <%= link_to power.name, power %>
       <br>
       Description: <%= power.description %>
     </li>
